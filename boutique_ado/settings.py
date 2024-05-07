@@ -25,7 +25,7 @@ SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-mattjones44-boutiqueado-406l1a0pvo9.ws-eu113.gitpod.io']
+ALLOWED_HOSTS = ['8000-mattjones44-boutiqueado-406l1a0pvo9.ws-eu111.gitpod.io']
 
 
 # Application definition
@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
+
+    # Other
     'crispy_forms',
 ]
 
@@ -68,7 +70,6 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth'),
-
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -77,12 +78,12 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
-
             ]
         },
     },
